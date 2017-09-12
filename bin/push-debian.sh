@@ -5,11 +5,12 @@
 # bin/push-debian.sh \
 #   -c opt
 #   -v 0.2.1
+#   -p gs://istio-release/release/0.2.1/deb
 
 function usage() {
   echo "$0 \
     -c <bazel config to use> \
-    -p <bucket path, e.g. gs://istio-release/release/deb> \
+    -p <GCS path, e.g. gs://istio-release/release/0.2.1/deb> \
     -v <istio version number>"
   exit 1
 }
