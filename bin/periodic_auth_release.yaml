@@ -4,7 +4,11 @@
 #       --substitutions=_VERSION=foo --no-source
 
 steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/rvkubiak/auth']
+
 - name: 'gcr.io/istio-io/istio-builder'
   args: [ './bin/release.sh', '-v', '$_VERSION', '-h', 'gcr.io/istio-builder-prototype', '-b', 'istio-builder-prototype' ]
+  dir: 'auth'
 
 timeout: 1800s
